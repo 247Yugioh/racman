@@ -28,6 +28,8 @@ namespace racman.offsets.ACIT
                         IsSelfKillSupported = true;
                         break;
                     case "BCES00511":
+                        IsAutosplitterSupported = true;
+                        IsSelfKillSupported = false;
                         break;
                     default:
                         IsAutosplitterSupported = false;
@@ -212,6 +214,11 @@ namespace racman.offsets.ACIT
             };
             gameVersion["BCES00511"] = new Addresses
             {
+                mapTimer = 0xEB3D04,
+                checkpointTimer = 0xE473B0,
+                onLoad = 0xE473C0,
+                planet = 0xEF7F10,
+                loadingPlanet = 0xE897B4,
                 gameStatePtr = 0xFBAE48,
                 cutsceneState1Ptr = 0xF6B52C,
                 cutsceneState2Ptr = 0x40E96E9C,
@@ -222,7 +229,6 @@ namespace racman.offsets.ACIT
                 //playerCoords = 0xE24170,
                 inputOffset = 0xF6AD48,
                 analogOffset = 0xF6ABA4,
-                currentPlanet = 0xE897B4,
                 azimuthHPPtr = 0x40E89A2C
             };
         }
